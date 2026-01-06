@@ -4,7 +4,7 @@ class Solution {
 public:
     int addDigits(int num) {
         
-        int rem, sum = 0;    
+        int sum = 0;    
 
         if(num<=9){
             return num;
