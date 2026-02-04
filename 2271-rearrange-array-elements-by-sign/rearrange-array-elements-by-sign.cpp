@@ -3,26 +3,22 @@
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
-        int n = nums.size();
-        vector<int> negative_nums;
-        vector<int> positive_nums;
+        int n= nums.size();
+        vector<int> result(n);
+
+        int pos = 0;
+        int neg = 1;
 
         for(int i=0; i<n; i++){
-            if(nums[i]<0){
-                negative_nums.push_back(nums[i]);
+            if(nums[i]>0){
+                result[pos] = nums[i];
+                pos+=2;
             }
             else{
-                positive_nums.push_back(nums[i]);
+                result[neg] = nums[i];
+                neg+=2;
             }
         }
-        for(int i=0; i<n; i++){
-            if(i%2==0){
-                nums[i] = positive_nums[i/2];
-            }
-            else{
-                nums[i] = negative_nums[i/2];
-            }
-        }
-    return nums;
+        return result;
     }
 };
