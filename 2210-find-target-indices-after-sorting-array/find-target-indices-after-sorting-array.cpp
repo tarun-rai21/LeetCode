@@ -12,12 +12,12 @@ public:
             if(nums[i]<target){
                 index++;
             }
-        }
-        for(int i=0; i<n; i++){
-            if(nums[i]==target){
-                result.push_back(index+count);
+            else if(nums[i]==target){
                 count++;
             }
+        }
+        for(int i=0; i<count; i++){
+            result.push_back(index+i);
         }
         return result;
     }
