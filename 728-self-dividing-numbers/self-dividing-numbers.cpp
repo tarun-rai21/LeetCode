@@ -5,7 +5,7 @@ public:
     vector<int> selfDividingNumbers(int left, int right) {
         
         vector<int> answer;
-        for(int i =left; i<right+1; i++){
+        for(int i =left; i<=right; i++){
             int num = i;
             bool self_dividing = 1;
             while(num>0){
