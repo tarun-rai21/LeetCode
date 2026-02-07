@@ -6,13 +6,15 @@ public:
         
         vector<int> answer;
         for(int i =left; i<=right; i++){
+            
             int num = i;
-            bool self_dividing = 1;
+            bool self_dividing = true;
+            
             while(num>0){
                 int rem = num%10;
                 num = num/10;
                 if(rem==0 || i%rem != 0){
-                    self_dividing = 0;
+                    self_dividing = false;
                     break;
                 }
             }
