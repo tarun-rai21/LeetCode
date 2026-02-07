@@ -13,6 +13,7 @@ public:
                 num = num/10;
                 if(rem==0 || i%rem != 0){
                     self_dividing = 0;
+                    break;
                 }
             }
             if(self_dividing){
