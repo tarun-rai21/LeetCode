@@ -1,7 +1,7 @@
 class Solution {
 public:
     int mySqrt(int x) {
-        int ans=0;
+        int ans=1;
         if(x==0) return 0;
         if(x==1) return 1;
         
@@ -15,10 +15,10 @@ public:
                 ans = mid;
                 break;
             }
-            if(mid > x/mid){
+            else if(mid > x/mid){
                 high = mid-1;
             }
-            if(mid < x/mid){
+            else{
                 ans = mid;
                 low = mid+1;
             }
