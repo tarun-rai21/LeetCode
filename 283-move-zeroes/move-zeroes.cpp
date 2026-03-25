@@ -8,10 +8,10 @@ public:
             int left = 0;
             int right = 1;
 
-            while(left<n & right<n){
-                if(nums[left]==0 & nums[right]==0) right++;
+            while(left<n && right<n){
+                if(nums[left]==0 && nums[right]==0) right++;
             
-            else if(nums[left]==0 & nums[right]!=0){
+            else if(nums[left]==0 && nums[right]!=0){
                 swap(nums[left], nums[right]);
                 left++;
                 right++;
