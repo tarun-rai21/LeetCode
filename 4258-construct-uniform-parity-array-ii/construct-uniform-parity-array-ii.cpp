@@ -1,17 +1,19 @@
 class Solution {
 public:
-    bool uniformArray(vector<int>& nums1) {
-        sort(nums1.begin(), nums1.end());
-        if (nums1[0]%2 != 0) return true;
-        
-        else{
-            int n = nums1.size();
-            for(int i=0; i<n-1; i++){
-                if((nums1[i]%2)!=(nums1[i+1]%2)){
-                    return false;
-                }
-            }
+    bool uniformArray(vector<int>& nums) {
+        int odd = 0, even = 0;
+        int mn = nums[0];
+
+        for (int x : nums) {
+            if (x % 2) odd++;
+            else even++;
+            mn = min(mn, x);
         }
-        return true;
+
+        // already uniform
+        if (odd == 0 || even == 0) return true;
+
+        // check smallest element
+        return (mn % 2 == 1);
     }
 };
