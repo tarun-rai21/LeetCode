@@ -1,23 +1,17 @@
 class Solution {
 public:
     bool uniformArray(vector<int>& nums1) {
+        sort(nums1.begin(), nums1.end());
+        if (nums1[0]%2 != 0) return true;
         
-        int n = nums1.size();
-
-        bool mix = 0;
-        for(int i=1; i<n; i++){
-            if((nums1[i-1]%2)!=(nums1[i]%2)){
-                mix = 1;
-                break;
+        else{
+            int n = nums1.size();
+            for(int i=0; i<n-1; i++){
+                if((nums1[i]%2)!=(nums1[i+1]%2)){
+                    return false;
+                }
             }
         }
-
-        if(mix){
-            sort(nums1.begin(), nums1.end());
-            if(nums1[0]%2 != 0) return 1;
-            else return 0;
-        }
-
-        return 1;
+        return true;
     }
 };
