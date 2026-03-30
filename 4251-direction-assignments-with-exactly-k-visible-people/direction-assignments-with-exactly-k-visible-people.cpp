@@ -34,9 +34,19 @@ public:
     int countVisiblePeople(int n, int pos, int k) {
         precompute();
 
-        if(n == 1) return (k == 0 ? 2 : 0);
-        if(k > n-1 || k < 0) return 0;
+        int L = pos;
+        int R = n - pos - 1;
 
-        return (2LL * nCr(n-1, k)) % MOD;
+        long long ans = 0;
+
+        for(int x = 0; x <= k; x++){
+            int y = k - x;
+
+            if(x <= L && y <= R){
+                ans = (ans + nCr(L, x) * nCr(R, y) % MOD) % MOD;
+            }
+        }
+
+        return (2LL * ans) % MOD;
     }
 };
