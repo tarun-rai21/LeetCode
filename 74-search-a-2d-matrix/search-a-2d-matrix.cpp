@@ -9,7 +9,7 @@ public:
 
         int row = 0;
 
-        while (low<=high && high < cols){
+        while (low<=high){
             if(target > matrix[row][cols-1]){
                 if (row < rows-1) row++;
                 else return 0;
