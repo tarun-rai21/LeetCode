@@ -12,7 +12,7 @@ public:
             sum += nums[right];
 
             //if cost is greater than k then shrink window
-            while((long long)nums[right]*(right-left+1) - sum > k){
+            while((long long)nums[right] * (right - left + 1) - sum > k){
                     sum -= nums[left];
                     left++;
             }
