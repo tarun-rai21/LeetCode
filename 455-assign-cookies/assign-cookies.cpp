@@ -7,16 +7,14 @@ public:
 
         int size_greed = g.size();
         int size_cookie = s.size();
-        int ans=0;
         
         int i=0, j=0;
         while(i<size_cookie && j<size_greed){
             if(g[j]<=s[i]){
-                ans++;
                 j++;
             }
             i++;            
         } 
-        return ans;       
+        return j;       
     }
 };
