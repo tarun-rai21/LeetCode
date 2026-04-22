@@ -11,8 +11,8 @@ public:
             
             else if(bills[i]==10){                
                 if(bill_5==0) return false;
-                    bill_5--;
-                    bill_10++;
+                bill_5--;
+                bill_10++;
             }
 
             else{
