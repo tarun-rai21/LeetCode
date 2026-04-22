@@ -6,14 +6,15 @@ public:
         int bill_10 = 0;
 
         for(int i=0; i<n; i++){
+            
             if(bills[i]==5) bill_5++;
-            else if(bills[i]==10){
-                if(bill_5>0){
+            
+            else if(bills[i]==10){                
+                if(bill_5==0) return false;
                     bill_5--;
                     bill_10++;
-                }
-                else return false;
             }
+
             else{
                 if(bill_10>0 && bill_5>0){
                     bill_10--;
