@@ -20,20 +20,18 @@ public:
 
             int sum = carry;
 
-            if(l1 != nullptr){
+            if(l1){
                 sum += l1->val;
                 l1 = l1->next;
             }
 
-            if(l2 != nullptr){
+            if(l2){
                 sum += l2->val;
                 l2 = l2->next;
             }
 
-            int digit = sum%10;
+            temp->next = new ListNode(sum%10);
             carry = sum/10;
-
-            temp->next = new ListNode(digit);
             temp = temp->next;
         }
         return dummy.next;
