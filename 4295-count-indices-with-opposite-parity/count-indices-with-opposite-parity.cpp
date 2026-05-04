@@ -3,18 +3,22 @@ public:
     vector<int> countOppositeParity(vector<int>& nums) {
         int n = nums.size();
         vector<int>result;
+        int even = 0;
+        int odd = 0;
+        for(int i=0; i<n; i++){
+            if(nums[i]%2==0) even++;
+            else odd++;
+        }
 
         for(int i=0; i<n; i++){
-            int count = 0;
-            for(int j=i+1; j<n; j++){
-                if(nums[i]%2==0 && nums[j]%2!=0){
-                    count++;
-                }
-                else if(nums[i]%2!=0 && nums[j]%2==0){
-                    count++;
-                }
+            if(nums[i]%2==0){
+                result.push_back(odd);
+                even--;
             }
-            result.push_back(count);
+            else{
+                result.push_back(even);
+                odd--;
+            }
         }
         return result;
     }
