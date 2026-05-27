@@ -1,25 +1,32 @@
 class Solution {
 public:
 
-    int trailingZeroes(long long n) {
-        if (n==0) return 0;
-        return __builtin_ctz(n);
+    int countTrailingZeros(long long n) {
+        return __builtin_ctzll(n);
     }
 
     int integerReplacement(int num) {
-        int count = 0;
         long long n = num;
+        int steps = 0;
 
-        while(n!=1){
-            if(n%2==0) n /= 2;
-            else if(n == 3) n -= 1;
-            else if(trailingZeroes(n-1) >= trailingZeroes(n+1)) n -= 1;
-            else if(trailingZeroes(n-1) < trailingZeroes(n+1)) n += 1;
-            else continue;
+        while (n != 1) {
 
-            count++;
+            // even
+            if ((n & 1) == 0) {
+                n >>= 1;
+            }
+
+            // odd
+            else if (n == 3 || countTrailingZeros(n - 1) > countTrailingZeros(n + 1)) {
+                n--;
+            }
+            else {
+                n++;
+            }
+
+            steps++;
         }
 
-    return count;
+        return steps;
     }
 };
