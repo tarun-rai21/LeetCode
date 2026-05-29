@@ -12,9 +12,8 @@ public:
                 if(counter<=k) result.push_back(nums[i]);
             }
             else{
-                counter = 0;
+                counter = 1;
                 result.push_back(nums[i]);
-                counter++;
             }
         }
         return result;
