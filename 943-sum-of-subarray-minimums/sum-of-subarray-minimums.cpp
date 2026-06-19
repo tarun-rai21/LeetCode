@@ -16,12 +16,12 @@ public:
     }
 
     vector<int> nextSmaller(vector<int>& arr) {
+        //next smaller or equal element
         int n = arr.size();
         stack<int> st;
         vector<int> result(n, n);
         
         for (int i = 0; i < n; i++) {
-            //next smaller or equal element
             while (!st.empty() && arr[st.top()] >= arr[i]) {
                 result[st.top()] = i;
                 st.pop();
