@@ -5,10 +5,9 @@ public:
 
         unordered_set<char> my_set;
         my_set.insert(s[0]);
-        int low = 0;
-        int high = 0;
-        int curr_length = 1;
-        int max_length = 1;
+        
+        int low = 0, high = 0;
+        int curr_length = 1, max_length = 1;
 
         int n = s.size();
 
